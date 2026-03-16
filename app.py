@@ -2,9 +2,21 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 from utils.llm_query import generate_analysis, generate_insight
+import streamlit as st
+
+st.set_page_config(
+    page_title="ChatBI Dashboard",
+    page_icon="📊",
+    layout="wide",
+)
 
 
-st.title("ChatBI - Conversational Business Intelligence Dashboard")
+st.markdown("""
+# 📊 ChatBI — AI Powered Business Intelligence
+Ask questions about your data and generate dashboards instantly.
+
+Upload a dataset and start chatting with your data.
+""")
 if st.button("Clear Conversation"):
     st.session_state.chat_history = []
 
@@ -17,6 +29,19 @@ uploaded_file = st.file_uploader("Upload your CSV dataset", type=["csv"])
 if uploaded_file:
 
     df = pd.read_csv(uploaded_file)
+    # KPI Cards
+    st.subheader("📊 Dataset Overview")
+    
+    col1, col2, col3 = st.columns(3)
+    
+    col1.metric("Total Rows", df.shape[0])
+    col2.metric("Total Columns", df.shape[1])
+    
+    # show total sales if column exists
+    if "Sales" in df.columns:
+        col3.metric("Total Sales", int(df["Sales"].sum()))
+    else:
+        col3.metric("Numeric Columns", len(df.select_dtypes(include="number").columns))
 
     st.subheader("Dataset Preview")
     st.dataframe(df)
