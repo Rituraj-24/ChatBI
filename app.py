@@ -186,18 +186,17 @@ if uploaded_file:
         # Trend chart if Date column exists
         if "Date" in df.columns:
 
-            df["Date"] = pd.to_datetime(df["Date"])
+        try:
+            df["Date"] = pd.to_datetime(df["Date"], errors="coerce")
 
             trend = df.groupby("Date")[value_column].sum().reset_index()
 
-            fig_line = px.line(
-                trend,
-                x="Date",
-                y=value_column,
-                title="Trend Chart"
-            )
+            fig_line = px.line(trend, x="Date", y=value_column, title="Trend Chart")
 
             st.plotly_chart(fig_line, use_container_width=True)
+
+        except:
+            st.warning("Could not generate trend chart from Date column.")
 
 
         # -----------------------------
