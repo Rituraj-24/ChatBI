@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -211,7 +210,7 @@ if uploaded_file:
         # insight = generate_insight(summary)
 
         # st.write(insight)
-=======
+
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -340,4 +339,4 @@ if uploaded_file:
         # insight = generate_insight(summary)
 
         # st.write(insight)
->>>>>>> cfa59ec203a5bd21e044597bd74758fc3b784c6d
+
