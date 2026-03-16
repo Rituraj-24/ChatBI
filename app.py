@@ -184,7 +184,7 @@ if uploaded_file:
 
 
         # Trend chart if Date column exists
-        if "Date" in df.columns:
+    if "Date" in df.columns:
 
         try:
             df["Date"] = pd.to_datetime(df["Date"], errors="coerce")
