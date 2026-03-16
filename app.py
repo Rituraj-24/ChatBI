@@ -171,6 +171,19 @@ if uploaded_file:
                 title="Comparison Chart"
             )
             st.plotly_chart(fig_bar, use_container_width=True)
+            st.divider()
+
+            st.subheader("🤖 AI Insights")
+
+            try:
+                summary = result.head(10).to_string()
+
+                insight = generate_insight(summary)
+
+                st.info(insight)
+
+            except:
+                st.warning("Could not generate AI insights.")
 
         # Pie Chart
         with col2:
@@ -181,6 +194,19 @@ if uploaded_file:
                 title="Distribution Chart"
             )
             st.plotly_chart(fig_pie, use_container_width=True)
+            st.divider()
+
+            st.subheader("🤖 AI Insights")
+
+            try:
+                summary = result.head(10).to_string()
+
+                insight = generate_insight(summary)
+
+                st.info(insight)
+
+            except:
+                st.warning("Could not generate AI insights.")
 
 
         # Trend chart if Date column exists
@@ -194,6 +220,19 @@ if uploaded_file:
             fig_line = px.line(trend, x="Date", y=value_column, title="Trend Chart")
 
             st.plotly_chart(fig_line, use_container_width=True)
+            st.divider()
+
+            st.subheader("🤖 AI Insights")
+
+            try:
+                summary = result.head(10).to_string()
+
+                insight = generate_insight(summary)
+
+                st.info(insight)
+
+            except:
+                st.warning("Could not generate AI insights.")
 
         except:
             st.warning("Could not generate trend chart from Date column.")
@@ -202,11 +241,11 @@ if uploaded_file:
         # -----------------------------
         # AI Insights (Optional)
         # -----------------------------
-        # st.subheader("🤖 AI Insights")
+        st.subheader("🤖 AI Insights")
 
-        # summary = result.head(10).to_string()
+        summary = result.head(10).to_string()
 
-        # insight = generate_insight(summary)
+        insight = generate_insight(summary)
 
-        # st.write(insight)
+        st.write(insight)
 
