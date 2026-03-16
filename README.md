@@ -8,7 +8,7 @@ Instead of writing SQL or manually creating charts, users can simply ask questio
 
 Try the deployed application here:
 
-👉 https://your-streamlit-app-link.streamlit.app
+👉 https://chatbi-ai.streamlit.app/
 
 ## ✨ Features
 
