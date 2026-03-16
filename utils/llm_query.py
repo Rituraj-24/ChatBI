@@ -1,6 +1,7 @@
 import google.generativeai as genai
 
-genai.configure(api_key="AIzaSyD8tVM2ZMQ1tJ7demEh9dOr75HwT27hgyY")
+import streamlit as st
+genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
 
 def generate_analysis(question, columns):
 
