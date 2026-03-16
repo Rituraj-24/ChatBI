@@ -8,4 +8,8 @@ Date,Region,Product,Sales
 2024-01-07,North,Laptop,1300
 2024-01-08,South,Phone,750
 2024-01-09,East,Tablet,650
+<<<<<<< HEAD
 2024-01-10,West,Laptop,1000
+=======
+2024-01-10,West,Laptop,1000
+>>>>>>> cfa59ec203a5bd21e044597bd74758fc3b784c6d

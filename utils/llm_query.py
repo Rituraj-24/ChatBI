@@ -1,6 +1,11 @@
 import google.generativeai as genai
+<<<<<<< HEAD
 import streamlit as st
 
+=======
+
+import streamlit as st
+>>>>>>> cfa59ec203a5bd21e044597bd74758fc3b784c6d
 genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
 
 def generate_analysis(question, columns):
@@ -12,8 +17,13 @@ You are a data analyst.
 
 User question: {question}
 
+<<<<<<< HEAD
 Dataset information:
 {columns}
+=======
+Dataset columns: {columns}
+
+>>>>>>> cfa59ec203a5bd21e044597bd74758fc3b784c6d
 Identify:
 1. Which column should be used for grouping
 2. Which column should be used as value
@@ -44,4 +54,8 @@ Respond in simple bullet points.
 
     response = model.generate_content(prompt)
 
+<<<<<<< HEAD
     return response.text.strip()
+=======
+    return response.text.strip()
+>>>>>>> cfa59ec203a5bd21e044597bd74758fc3b784c6d

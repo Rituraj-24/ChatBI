@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 streamlit
 pandas
 plotly
+=======
+streamlit
+pandas
+plotly
+>>>>>>> cfa59ec203a5bd21e044597bd74758fc3b784c6d
 google-generativeai
