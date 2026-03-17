@@ -39,7 +39,13 @@ if st.sidebar.button("Clear Conversation"):
 # Main app logic
 if uploaded_file:
 
-    df = pd.read_csv(uploaded_file)
+    try:
+        df = pd.read_csv(uploaded_file, encoding="utf-8")
+    except:
+        try:
+            df = pd.read_csv(uploaded_file, encoding="latin-1")
+        except:
+            df = pd.read_csv(uploaded_file, encoding="ISO-8859-1")
 
     # -----------------------------
     # Sidebar Filters
