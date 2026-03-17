@@ -42,3 +42,26 @@ Try the deployed application here:
 - Gemini API (Google Generative AI)
 
 ## 📂 Project Structure
+ChatBI
+│
+├── app.py # Main Streamlit dashboard
+├── requirements.txt # Project dependencies
+│
+├── dataset
+│ └── sales.csv # Example dataset
+│
+├── utils
+│ └── llm_query.py # AI query interpretation
+│
+└── .streamlit
+└── secrets.toml # API key (not uploaded to GitHub)
+
+---
+
+## ⚙ Installation (Run Locally)
+
+Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/chatbi.git
+
